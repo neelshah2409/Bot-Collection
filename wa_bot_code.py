@@ -1,7 +1,16 @@
-from flask import Flask
-from googlesearch import search
+## google wa bot from gfg.
+## link 'https://www.geeksforgeeks.org/building-whatsapp-bot-on-python/'
+## using google library from gfg for google search 
+## link 'https://www.geeksforgeeks.org/performing-google-search-using-python-code/'
+## uses twilio free trial whatsapp api
+## uses ngrok to host commands on public server to connect with twilio
+## uses python 3.9 or above
+## pip3 install twilio flask request
+
+from flask import Flask 
+from googlesearch import search 
 from flask import request
-from twilio.twiml.messaging_response import MessagingResponse
+from twilio.twiml.messaging_response import MessagingResponse 
 
 
 app = Flask(__name__)
