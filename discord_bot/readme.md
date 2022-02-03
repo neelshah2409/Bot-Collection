@@ -3,4 +3,4 @@
   
 # <p align="center"> Welcome bot </p>
 
-**A simple bot that can be used to welcome new users to a discord server, sending them a custom private message, send a welcome message to a specific channel, and adding them to a role.**
+**<p align="center"> A simple bot that can be used to welcome new users to a discord server, sending them a custom private message, send a welcome message to a specific channel, and adding them to a role.**
