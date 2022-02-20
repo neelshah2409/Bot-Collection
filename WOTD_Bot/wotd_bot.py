@@ -7,8 +7,9 @@ TWILIO_AUTH_TOKEN = "ENTER YOUR TWILIO AUTH TOKEN HERE"
 API_ENDPOINT = "https://random-word-api.herokuapp.com/word?swear=0&number=1"
 
 
-app = Flask(__name__)
+client = Client(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN)
 
+app = Flask(__name__)
 
 def send_msg(sender_number, reciever_number, message):
     client.messages.create(
@@ -31,12 +32,16 @@ def Bot():
         response = requests.get(API_ENDPOINT)
 
         if response.status_code == 200:
-            wotd_msg = "Here's your word of the day: *{}*".format(
+            wotd_msg = "📇 Here's your word of the day: *{}*".format(
                 response.json().pop())
         else:
             wotd_msg = "Oops! I found nothing you!"
 
         send_msg(reciever_number, sender_number, wotd_msg)
+    
+    else:
+        send_msg(reciever_number, sender_number, "Sorry, what did you say?")
+
 
     return ('', 200)
 
