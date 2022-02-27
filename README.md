@@ -1,5 +1,5 @@
 <div align="center">
-   <img src="https://d33wubrfki0l68.cloudfront.net/710cb0d537d2e7fa6246445c0977ecc994f05f5a/6a3b4/assets/img/jwoc_logo.svg" alt="Banner" width="30%"/></a>
+  <img src="https://socialify.git.ci/neelshah2409/Bot-Collection/image?font=Raleway&forks=1&issues=1&language=1&name=1&owner=1&pattern=Charlie%20Brown&pulls=1&stargazers=1&theme=Dark" alt="Bot-Collection" width="640" height="320" />
 </div>
 <h1 align="center">Bot-Collection</h1>
 <div align="center">
@@ -96,6 +96,15 @@ git push -u origin <your_branch_name>
 ## Roadmap
 
 See the [open issues](https://github.com/neelshah2409/Bot-Collection/issues) for a list of proposed features (and known issues). Feel free to raise new issues.
+
+
+## Open Source Participation
+
+This project is a part of these Open Source Programs
+
+- [JWoC (JGEC Winter of Code)](https://jwoc.tech/) 
+
+<img src="https://d33wubrfki0l68.cloudfront.net/710cb0d537d2e7fa6246445c0977ecc994f05f5a/6a3b4/assets/img/jwoc_logo.svg" width="30%"/>
 
 
 ## Contributors
