@@ -57,7 +57,7 @@ while True:
       encouragement_list.append("take a deep breath")
       counter += 1
     
-      output = "dont be sad every cloud has a silver lining"
+      output = "Don't be sad, Every cloud has a silver lining"
 
   elif counter == 1:
     
