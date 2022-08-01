@@ -8,7 +8,7 @@
    <img src="https://forthebadge.com/images/badges/open-source.svg" />
 </div>
 
-[![Contributors](https://img.shields.io/github/contributors/neelshah2409/Bot-Collection.svg)](https://github.com/neelshah2409/Bot-Collection/graphs/contributors) [![Forks](https://img.shields.io/github/forks/neelshah2409/Bot-Collection.svg)](https://github.com/neelshah2409/Bot-Collection/network/members) [![Issues](https://img.shields.io/github/issues/neelshah2409/Bot-Collection.svg)](https://github.com/neelshah2409/Bot-Collection/issues) [![Pull Request](https://img.shields.io/github/issues-pr-closed-raw/neelshah2409/Bot-Collection)](https://github.com/neelshah2409/Bot-Collection/pulls)
+
 ## About The Project
 
 Here It will be a collection of different kind of automation bots which will help general people to do the regular work very smoothly and effectively. Some examples are like github automation bot which helps to make pr, issue and helps to easily merge it and maintains the workflow.
