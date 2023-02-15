@@ -1,6 +1,6 @@
 # Motivator Bot 🤗
 
-A Discord Motivator Bot Written in Python by [Parth Shah](codingis4noobs2)
+A Discord Motivator Bot Written in Python by [Parth Shah](https://github.com/codingis4noobs2)
 
 ## Access Token :
 
