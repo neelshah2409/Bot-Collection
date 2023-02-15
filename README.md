@@ -11,93 +11,27 @@
 
 ## About The Project
 
-Here It will be a collection of different kind of automation bots which will help general people to do the regular work very smoothly and effectively. Some examples are like github automation bot which helps to make pr, issue and helps to easily merge it and maintains the workflow.
-
+Bot-Collection is a collection of different kinds of automation bots designed to help people complete their regular work more smoothly and effectively. 
+Some examples include a GitHub automation bot that helps with pull requests, issues, and merges, as well as other bots designed to assist with a variety of tasks.
 
 ## Before You Start
 
-- Always maintain the file format & folder structure.
-- Maintain proper file names.
-- Don't use capital or spaces for files names instead use `_` or `-`.
+To ensure a smooth contribution process, please adhere to the following guidelines:
 
+  * Maintain proper file format and folder structure.
+  * Use appropriate file names (e.g., use "-" or "_" instead of spaces or capital letters).
+  * Pull from the upstream repository to your main branch to keep it up-to-date with the latest changes.
 
-## Getting Started
+## Contributing
 
-Below are the steps to follow to contribute to this project:
-
-**1.** Fork [this](https://github.com/neelshah2409/Bot-Collection) repository.
-
-**2.** Clone your forked copy of the project.
-
-```
-git clone https://github.com/<your_user_name>/Bot-Collection.git
-```
-
-where `your_user_name` is your GitHub username.
-
-**3.** Navigate to the project directory.
-
-```
-cd Bot-Collection
-```
-
-**4.** Add a reference(remote) to the original repository.
-
-```
-git remote add upstream https://github.com/neelshah2409/Bot-Collection.git
-```
-
-**5.** Check the remotes for this repository.
-
-```
-git remote -v
-```
-
-**6.** Always take a pull from the upstream repository to your main branch to keep it at par with the main project (updated repository).
-
-```
-git pull upstream main
-```
-
-**7.** Create a new branch.
-
-```
-git checkout -b <your_branch_name>
-```
-
-**8.** Make necessary changes and commit those changes
-
-**9.** Track your changes.
-
-```
-git add .
-```
-
-**10.** Commit your changes .
-
-```
-git commit -m "Commit message"
-```
-
-**11.** Push the committed changes in your feature branch to your remote repo.
-
-```
-git push -u origin <your_branch_name>
-```
-
-**12.** To create a pull request, click on `compare and pull requests`. Please ensure you compare your feature branch to the desired branch of the repo you are suppose to make a PR to.
-
-**13.** Add appropriate title and description to your pull request explaining your changes and efforts done.
-
-**14.** Click on `Create Pull Request`.
-
-**15.** And you are done creating a pull request to this project. Be patient while we review your code and merge the changes.
-
+  * Contributions to the project are welcome! 
+  * To contribute, please refer to `contributing guide`. 
+  * Make sure to create a new branch for your changes, and ensure that your code adheres to the project's code standards.
 
 ## Roadmap
 
-See the [open issues](https://github.com/neelshah2409/Bot-Collection/issues) for a list of proposed features (and known issues). Feel free to raise new issues.
-
+  * To see the project's proposed features and known issues, visit the [project's issues page](https://github.com/neelshah2409/Bot-Collection/issues).
+  * Feel free to add new issues as necessary.
 
 ## Open Source Participation
 
@@ -113,3 +47,7 @@ This project is a part of these Open Source Programs
 <a href="https://github.com/neelshah2409/Bot-Collection/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=neelshah2409/Bot-Collection" />
 </a>
+
+## License
+
+The project is licensed under the [MIT License](https://github.com/neelshah2409/Bot-Collection/blob/main/LICENSE).
