@@ -5,8 +5,9 @@ import sys
 
 api_id = "your api id get it from https://my.telegram.org/apps"
 api_hash = "your api hash get it from https://my.telegram.org/apps"
+bot_token = "your token"
 
-app = Client("bot token get it from bot father", api_id=api_id, api_hash=api_hash)
+app = Client(bot_token, api_id=api_id, api_hash=api_hash)
 
  #Handler for /eval command
 @app.on_message(filters.command("eval"))
