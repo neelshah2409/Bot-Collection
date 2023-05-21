@@ -9,11 +9,11 @@ driver = webdriver.Chrome()
 # Open WhatsApp Web
 driver.get("https://web.whatsapp.com/")
 
-# Wait for the user to scan the QR code manually
+# Wait for the user to scan the QR code manually for 10 seconds
 time.sleep(10)
 
 # Find the group name element
-group_name = driver.find_element_by_xpath("//span[@title='Group Name']")    # Replace Group Name with the name of your group
+group_name = driver.find_element_by_xpath("//span[@title='Group Name']")    # Replace Group Name with the name of the group you want to tag
 group_name.click()
 
 # Find the message box
