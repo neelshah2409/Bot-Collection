@@ -14,7 +14,7 @@ This Python script utilizes the Selenium library to automate the process of tagg
 3. Navigate to the project directory
     
     ```bash
-    cd Whatsapp-bot
+    cd Whatsapp-bot/Tag-all-bot
     ```
 4. Install the required dependencies
 
