@@ -2,6 +2,7 @@ import json
 import vlc, pafy
 import yt_dlp as youtube_dl
 def jsonFileReader():
+    AIzaSyBswgNj2nKUeVKp7MRHT0Fz7RvGTpMReIA
     with open('demo.json', 'r', encoding='utf-8') as f:
         data = json.load(f)
         items = data.get('items', [])
