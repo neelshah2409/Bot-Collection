@@ -1,10 +1,11 @@
 import json
-
+import vlc, pafy
+import yt_dlp as youtube_dl
 def jsonFileReader():
     with open('demo.json', 'r', encoding='utf-8') as f:
         data = json.load(f)
         items = data.get('items', [])
-        dataPrinter(items, data)
+        FromLinkDataPrint(items, data)
         # if items:
         # title = items[0]['snippet'].get('title')
         # if title:
@@ -13,14 +14,22 @@ def jsonFileReader():
         #     print("Title not found.")
         # else:
         #     print("No items found in the JSON file.")
-
+def getVideoId(items, data):
+    f = data['items']
+    return items[0]['snippet']['id'].get['videoId']
+def FromLinkDataPrint(items, data):
+    # url = "https://www.youtube.com/watch?v=" + getVideoId(items, data)
+    url = "https://www.youtube.com/watch?v=HrgckFxmFgU"
+    video = pafy.new(url)
+    best = video.getbest()
+    media = vlc.MediaPlayer(best.url)
+    media.play()
 def dataPrinter(items, data):
     title = items[0]['snippet'].get('title')
     description = items[0]['snippet'].get('description')
     count = 1
     if title:
         for item in data['items']:
-            title = item['snippet']['title']
             print(print_bold(title, True, count))
             if description:
                 description = item['snippet']['description']
