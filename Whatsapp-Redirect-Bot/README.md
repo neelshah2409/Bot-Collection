@@ -1,10 +1,10 @@
 # WhatsappRedirectBot
 
-WhatsApp Redirect Bot is a Telegram bot that generates chat links for WhatsApp based on provided phone numbers. It allows users to easily share their phone numbers and redirect others to start a chat on WhatsApp without the hassle of searching for contacts manually.
+**WhatsApp Redirect Bot** is a Telegram bot that generates chat links for WhatsApp based on provided phone numbers. It allows users to easily share their phone numbers and redirect others to start a chat on WhatsApp without the hassle of searching for contacts manually.
 
-![ICON](Whatsapp-Redirect-Bot/Images/logo.png)
+![ICON](Images/logo.png)
 
-Features
+**Features**
 
 Generates chat links for WhatsApp using phone numbers.
 
@@ -15,7 +15,7 @@ Directly redirects users to WhatsApp chats without manual searching.
 Supports Python 3.7 and above.
 
 
-Installation
+**Installation**
 
 
 1)Clone the repository:
@@ -27,10 +27,11 @@ pip install -r requirements.txt
 3)Run the bot:
 python Whatsapp_Redirect_Bot.py
 
+
 Start using the bot on Telegram by searching for your bot username and providing phone numbers to generate WhatsApp chat links.
 
-![ScreenShot](Whatsapp-Redirect-Bot/Images/Screenshot.jpg)
+![ScreenShot](Images/Screenshot.jpg)
 
-License
+**License**
 
 This project is licensed under the MIT License.
