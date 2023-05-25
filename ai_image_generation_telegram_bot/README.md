@@ -35,13 +35,9 @@ Now we are gonna go through how you can create your own image generator AI bot. 
 You can see a list of commands by typing */help*
 
 | Commands | Description |
-
 |--|--|
-
 | /start | Start a conversation |
-
 | /help | Get a list of all the commands |
-
 | /create `prompt` | Create an image based on the given command |
 
 #
