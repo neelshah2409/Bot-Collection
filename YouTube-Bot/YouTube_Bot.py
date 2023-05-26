@@ -9,7 +9,7 @@ import pafy
 # Set up the YouTube Data API client
 api_service_name = "youtube"
 api_version = "v3"
-api_key = "AIzaSyBswgNj2nKUeVKp7MRHT0Fz7RvGTpMReIA"  # Get It From https://console.cloud.google.com
+api_key = "Your_API_KEY"  # Get It From https://console.cloud.google.com
 youtube = googleapiclient.discovery.build(api_service_name, api_version, developerKey=api_key)
 
 
