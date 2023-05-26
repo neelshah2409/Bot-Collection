@@ -97,6 +97,7 @@ while True:
 
     for index, video in enumerate(videos, start=1):
         print(f"{index}. {video['title']} - {video['description']}")
+        print()
 
     video_number = input("Enter the number of the video you want to watch (0 to cancel): ")
     if video_number == "0":
