@@ -1,7 +1,6 @@
 import os
 import platform
 import webbrowser
-
 import googleapiclient.discovery
 import youtube_dl
 import vlc
@@ -10,7 +9,7 @@ import pafy
 # Set up the YouTube Data API client
 api_service_name = "youtube"
 api_version = "v3"
-api_key = "YOUR_API_KEY"  # Replace with your actual API key
+api_key = "AIzaSyBswgNj2nKUeVKp7MRHT0Fz7RvGTpMReIA"  # Get It From https://console.cloud.google.com
 youtube = googleapiclient.discovery.build(api_service_name, api_version, developerKey=api_key)
 
 
@@ -18,7 +17,7 @@ def search_videos(query):
     # Search for videos based on the user's query
     request = youtube.search().list(
         part="snippet",
-        maxResults=5,  # Adjust the number of results as needed
+        maxResults=7,
         q=query
     )
     response = request.execute()
@@ -45,20 +44,28 @@ def show_video_details(video_id):
 
     # Extract the likes and tags from the video details
     video = response['items'][0]
+    channel = video['snippet']['channelTitle']
     likes = video['statistics']['likeCount']
     tags = video['snippet'].get('tags', [])
 
-    return likes, tags
+    return likes, tags, channel
 
 
 def download_video(video_id):
     # Download the video using youtube-dl
-    ydl_opts = {
-        'format': 'best',
-        'outtmpl': 'downloads/%(title)s.%(ext)s',  # Adjust the download directory as needed
-    }
-    with youtube_dl.YoutubeDL(ydl_opts) as ydl:
-        ydl.download([f'https://www.youtube.com/watch?v={video_id}'])
+    try:
+        ydl_opts = {
+            'format': 'best',
+            'outtmpl': 'downloads/%(title)s.%(ext)s',  # Adjust the download directory as needed
+        }
+        with youtube_dl.YoutubeDL(ydl_opts) as ydl:
+            ydl.download([f'https://www.youtube.com/watch?v={video_id}'])
+
+    except:
+        print("Video Not Downloaded\n do you Want to Play Video?(y/n)")
+        play_choice = input()
+        if play_choice == "y":
+            play_video(video_id)
 
 
 def play_video(video_id):
@@ -74,6 +81,7 @@ def play_video(video_id):
     except:
         open_in_browser = input("Player Doesn't work Do You Want to Open In WebBrowser (y/n): ")
         if open_in_browser == "y":
+            print(f"Playing This Video in Browser {url}")
             webbrowser.open(url)
 
 
@@ -96,13 +104,17 @@ while True:
 
     selected_video = videos[int(video_number) - 1]
     video_id = selected_video['video_id']
-    likes, tags = show_video_details(video_id)
+    likes, tags, channel = show_video_details(video_id)
 
+    print(f"Channel name: {channel}")
     print(f"Likes: {likes}")
     print(f"Tags: {', '.join(tags)}")
 
-    download_choice = input("Do you want to download this video? (y/n): ")
+    download_choice = input("Do you want to Download This video? (y/n): ")
     if download_choice.lower() == "y":
         download_video(video_id)
     else:
-        play_video(video_id)
+        print("Do You Want to Play This Video? (y/n): ")
+        play_choice = input()
+        if play_choice.lower() == "y":
+            play_video(video_id)
