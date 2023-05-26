@@ -7,6 +7,8 @@
 - Clone This Repository
 - Change The Directory
 
+# make Your Api Key
+Read This Blog: https://javapower.hashnode.dev/make-your-youtube-api-key
 
 
 ```commandline
