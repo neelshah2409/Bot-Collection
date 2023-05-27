@@ -13,7 +13,9 @@ class UnsplashImageDownloader:
         self.query = query
 
     def get_total_images(self):
-        with requests.request("GET", self.url, headers=self.headers, params=self.querystring) as rs:
+        with requests.request(
+            "GET", self.url, headers=self.headers, params=self.querystring
+        ) as rs:
             json_data = rs.json()
 
         return json_data["total"]
@@ -23,7 +25,9 @@ class UnsplashImageDownloader:
         for page in range(1, int(pages_) + 1):
             self.querystring["page"] = f"{page}"
 
-            response = requests.request("GET", self.url, headers=self.headers, params=self.querystring)
+            response = requests.request(
+                "GET", self.url, headers=self.headers, params=self.querystring
+            )
             response_json = response.json()
             all_data = response_json["results"]
 
@@ -35,11 +39,11 @@ class UnsplashImageDownloader:
                     pass
                 if not name:
                     try:
-                        name = data['alt_description']
+                        name = data["alt_description"]
                     except:
                         pass
                 if not name:
-                    name = data['description']
+                    name = data["description"]
                 if not name:
                     name = self.query
                 try:
@@ -55,8 +59,8 @@ class UnsplashImageDownloader:
         return all_links
 
 
-if __name__ == '__main__':
-    folder = 'unsplash'
+if __name__ == "__main__":
+    folder = "unsplash"
     try:
         if not os.path.exists(folder):
             os.mkdir(folder)
@@ -76,7 +80,9 @@ if __name__ == '__main__':
         print("sorry, no image available for this search")
         exit()
 
-    number_of_images = int(input("enter approx number of images you want to download : "))
+    number_of_images = int(
+        input("enter approx number of images you want to download : ")
+    )
 
     if number_of_images == 0 or number_of_images > total_image:
         print("not a valid number")

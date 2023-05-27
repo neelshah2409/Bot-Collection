@@ -12,21 +12,21 @@ print("Bot Configuration:")
 print("Like Tweets :", LIKE)
 print("Follow users :", FOLLOW)
 
-for tweet in tweepy.Cursor(api.search_tweets, q = QUERY).items():
+for tweet in tweepy.Cursor(api.search_tweets, q=QUERY).items():
     try:
-        print('\nTweet by: @' + tweet.user.screen_name)
+        print("\nTweet by: @" + tweet.user.screen_name)
 
         tweet.retweet()
-        print('Retweeted the tweet!')
+        print("Retweeted the tweet!")
 
         if LIKE:
             tweet.favorite()
-            print('Liked the tweet!')
+            print("Liked the tweet!")
 
         if FOLLOW:
             if not tweet.user.following:
                 tweet.user.follow()
-                print('Followed the account!')
+                print("Followed the account!")
 
         sleep(SLEEP_TIME)
 

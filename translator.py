@@ -1,9 +1,9 @@
 from googletrans import Translator
 
-sentence=str(input("say......"))
+sentence = str(input("say......"))
 
-translator=Translator()
+translator = Translator()
 
-translated_sentence=translator.translate(sentence,src='en,dest='ca)
+translated_sentence = translator.translate(sentence, src="en", dest="ca")
 
 print(translated_sentence.text)
