@@ -1,0 +1,5 @@
+webbrowser
+googleapiclient
+youtube_dl
+vlc
+pafy
