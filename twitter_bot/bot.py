@@ -1,7 +1,16 @@
 import tweepy
 from pyrogram import Client, filters
 from pyrogram.types import Message
-from config import bot_token, consumer_key, consumer_secret, access_token, access_token_secret, api_hash,api_id
+from config import (
+    bot_token,
+    consumer_key,
+    consumer_secret,
+    access_token,
+    access_token_secret,
+    api_hash,
+    api_id,
+)
+
 # Authenticate with Twitter API
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
@@ -22,6 +31,7 @@ def tweet_command(client: Client, message: Message):
     twitter_api.update_status(tweet_message)
     message.reply("Tweet posted successfully!")
 
+
 @telegram_bot.on_message(filters.command("timeline"))
 def timeline_command(client: Client, message: Message):
     # Fetch the user's timeline from Twitter
@@ -33,6 +43,7 @@ def timeline_command(client: Client, message: Message):
         timeline_text += f"- {tweet.text}\n\n"
     message.reply(timeline_text)
 
+
 @telegram_bot.on_message(filters.command("like"))
 def like_command(client: Client, message: Message):
     # Extract the tweet ID from the command
@@ -43,8 +54,9 @@ def like_command(client: Client, message: Message):
         twitter_api.create_favorite(tweet_id)
         message.reply("Tweet liked successfully!")
     except tweepy.TweepError as e:
-        error_message = str(e.reason) if hasattr(e, 'reason') else str(e)
+        error_message = str(e.reason) if hasattr(e, "reason") else str(e)
         message.reply(f"Failed to like the tweet: {error_message}")
+
 
 # Start the Telegram bot
 telegram_bot.run()

@@ -9,7 +9,7 @@ bot_token = "your token"
 
 app = Client(bot_token, api_id=api_id, api_hash=api_hash)
 
- #Handler for /eval command
+# Handler for /eval command
 @app.on_message(filters.command("eval"))
 async def evaluate_code(client: Client, message: Message):
     # Extract the code from the message
@@ -36,8 +36,9 @@ async def evaluate_code(client: Client, message: Message):
         client.send_message(
             chat_id=message.chat.id,
             text=f"Error: {str(e)}",
-            reply_to_message_id=message.message_id
+            reply_to_message_id=message.message_id,
         )
+
 
 # Start the client
 app.run()

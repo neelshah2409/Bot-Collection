@@ -212,9 +212,9 @@ async def stop(ctx):
     voice = discord.utils.get(client.voice_clients, guild=ctx.guild)
     voice.stop()
     embedVar = discord.Embed(
-    title="Music Stopped + Queue Cleared",
-    description="To Play Music Enter : -p _<url>_\n",
-    color=0xFFFB00,
+        title="Music Stopped + Queue Cleared",
+        description="To Play Music Enter : -p _<url>_\n",
+        color=0xFFFB00,
     )
     await ctx.channel.send(embed=embedVar)
     while songlist.empty != True:
@@ -285,7 +285,9 @@ async def commands(ctx):
         description="Built by: https://github.com/belelaritra\n",
         color=0xFFFB00,
     )
-    embedVar.add_field(name="-join || -j", value="Connnects Voice Channel", inline=False)
+    embedVar.add_field(
+        name="-join || -j", value="Connnects Voice Channel", inline=False
+    )
     embedVar.add_field(
         name="-play _<url or song name>_ || -p _<url or song name>_ ",
         value="Plays a Song",

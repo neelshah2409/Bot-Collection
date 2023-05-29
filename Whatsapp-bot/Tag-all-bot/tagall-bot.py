@@ -1,4 +1,4 @@
-#IMPORTS
+# IMPORTS
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import time
@@ -13,11 +13,15 @@ driver.get("https://web.whatsapp.com/")
 time.sleep(10)
 
 # Find the group name element
-group_name = driver.find_element_by_xpath("//span[@title='Group Name']")    # Replace Group Name with the name of the group you want to tag
+group_name = driver.find_element_by_xpath(
+    "//span[@title='Group Name']"
+)  # Replace Group Name with the name of the group you want to tag
 group_name.click()
 
 # Find the message box
-message_box = driver.find_element_by_xpath("//div[@class='_2S1VP copyable-text selectable-text']")
+message_box = driver.find_element_by_xpath(
+    "//div[@class='_2S1VP copyable-text selectable-text']"
+)
 message_box.click()
 
 # Type the message
