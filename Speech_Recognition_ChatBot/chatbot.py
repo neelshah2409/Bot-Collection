@@ -3,8 +3,11 @@ from chatterbot import ChatBot
 from chatterbot.trainers import ListTrainer
 from tkinter import *
 import pyttsx3 as pp
+#Importing Speech Recognition
 import speech_recognition as s
 import threading
+import time
+time.clock = time.time
 
 engine = pp.init()
 voice = engine.getProperty('voices')
@@ -86,7 +89,7 @@ def ask_from_bot():
 
 frame = Frame(main)
 sc = Scrollbar(frame)
-msgs = ListBox(frame,width=80,height=20,yscrollcommand=sc.set)
+msgs = Listbox(frame,width=80,height=20,yscrollcommand=sc.set)
 
 sc.pack(side=RIGHT,fill = Y)
 msgs.pack(side=LEFT,fill = BOTH,pady=10)
