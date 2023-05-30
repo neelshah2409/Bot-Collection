@@ -37,9 +37,9 @@ To ensure a smooth contribution process, please adhere to the following guidelin
 
 This project is a part of these Open Source Programs
 
-- [JWoC (JGEC Winter of Code)](https://jwoc.tech/) 
+- [GSSoC (GirlScript Summer of Code)](https://www.gssoc.tech/)
 
-<img src="https://d33wubrfki0l68.cloudfront.net/710cb0d537d2e7fa6246445c0977ecc994f05f5a/6a3b4/assets/img/jwoc_logo.svg" width="30%"/>
+<img src="https://d33wubrfki0l68.cloudfront.net/b30c3ac1270fcd1fe3d9a58764c173c1ce2c8a99/7c4cb/assets/images/summerofcode.webp" width="30%"/>
 
 
 ## Contributors
@@ -51,3 +51,4 @@ This project is a part of these Open Source Programs
 ## License
 
 The project is licensed under the [MIT License](https://github.com/neelshah2409/Bot-Collection/blob/main/LICENSE).
+
