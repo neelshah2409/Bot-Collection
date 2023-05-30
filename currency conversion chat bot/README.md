@@ -1,11 +1,12 @@
 
 # currency-convertor Bot
- 1. currency converter chatbot code with Flask to create a web-based chatbot
+ 1. currency converter chatbot code with Flask to create a web-based chatbot.
 
 # Getting Started
 
 ## Prerequisites
  [Python](https://www.python.org/downloads/)
+ [API USED](https://app.exchangerate-api.com/)
 
 ## How to setup
 
