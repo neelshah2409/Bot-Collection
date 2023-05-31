@@ -1,9 +1,7 @@
-# print("Hello")
 from chatterbot import ChatBot
 from chatterbot.trainers import ListTrainer
 from tkinter import *
 import pyttsx3 as pp
-#Importing Speech Recognition
 import speech_recognition as s
 import threading
 import time
@@ -17,11 +15,6 @@ def speak(word):
     engine.say(word)
     engine.runAndWait()
 
-
-
-#pip install pyttsx3
-#pip install SpeechRecognition
-#pip install PyAudio
 bot = ChatBot("My Chatbot")
 conversation = [
     'hello',
@@ -39,20 +32,7 @@ conversation = [
 ]
 
 trainer = ListTrainer(bot);
-
-#Now training the bot with help of trainer
 trainer.train(conversation)
-
-# ans = bot.get_response("What is your name?")
-# print(ans)
-#
-# print("Talking to a bot")
-# while True :
-#     query = input()
-#     if query == 'exit':
-#         break
-#     ans = bot.get_response(query)
-#     print("bot : ",ans)
 
 main = Tk()
 
