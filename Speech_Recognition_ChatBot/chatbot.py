@@ -14,7 +14,6 @@ engine.setProperty('voice',voice[0].id)
 def speak(word):
     engine.say(word)
     engine.runAndWait()
-
 bot = ChatBot("My Chatbot")
 conversation = [
     'hello',
