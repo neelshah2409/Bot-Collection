@@ -1,0 +1,2 @@
+alpaca-trade-api==1.2.3
+
