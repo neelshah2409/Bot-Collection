@@ -1,0 +1,9 @@
+# Youtube subscriber counter Bot
+
+A Youtube subscriber counter Bot written in Python by [Aman Kumar](https://github.com/amankumar100)
+
+## Basic Installation Requirement
+## You have to install google-api-python-client library
+In CMD Run this Command : pip install google-api-python-client
+
+## Now run the code to get the output. You can directly run it or use the terminal on VSCode
