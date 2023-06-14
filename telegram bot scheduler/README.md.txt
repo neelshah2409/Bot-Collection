@@ -15,7 +15,7 @@ This is a Telegram bot that allows you to schedule tasks with specific dates and
 
 2. Install the required libraries:
 
-Telebot
+Telebot,time,sched modules
 
 3. Set up a Telegram bot and obtain the bot token. You can follow the official Telegram Bot documentation to create a new bot: [https://core.telegram.org/bots#creating-a-new-bot](https://core.telegram.org/bots#creating-a-new-bot)
 
