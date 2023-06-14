@@ -1,5 +1,5 @@
 # Enter your desired hasttag here.
-QUERY = '#indianhistory'
+QUERY = "#indianhistory"
 
 # Twitter bot setting for liking Tweets
 LIKE = True
