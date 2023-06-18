@@ -1,58 +1,85 @@
 from newsapi import NewsApiClient
 import pycountry
 
-# you have to get your api key from newapi.com and then paste it below
+# Get your API key from newsapi.org and paste it below
 newsapi = NewsApiClient(api_key="YOUR_API_KEY")
+
+def get_country_code(country_name):
+    """Get the country code from the country name using pycountry."""
+    try:
+        country = pycountry.countries.search_fuzzy(country_name)
+        if country:
+            return country[0].alpha_2
+        else:
+            return None
+    except LookupError:
+        return None
+
+def display_articles(articles):
+    """Display the articles with improved readability."""
+    if articles:
+        for article in articles:
+            source = article["source"]["name"]
+            title = article["title"]
+            description = article["description"]
+            published_at = article["publishedAt"]
+
+            print("Source: ", source)
+            print("Title: ", title)
+            print("Description: ", description)
+            print("Published At: ", published_at)
+            print("--------------------------------------")
+    else:
+        print("No articles found.")
 
 want_to_search_again = True
 
 while want_to_search_again:
-    # now we will take name of country from user as input
+    # Get the country name from the user as input
     input_country = input("Country: ")
-    input_countries = [f"{input_country.strip()}"]
-    countries = {}
+    country_code = get_country_code(input_country)
 
-    # iterate over all the countries in
-    # the world using pycountry module
-    for country in pycountry.countries:
+    if not country_code:
+        print("Invalid country name. Please try again.")
+        continue
 
-        # and store the unique code of each country
-        # in the dictionary along with it's full name
-        countries[country.name] = country.alpha_2
+    # Display available categories and get the user's choice
+    print("Which category are you interested in?")
+    print("1. Business")
+    print("2. Entertainment")
+    print("3. General")
+    print("4. Health")
+    print("5. Science")
+    print("6. Technology")
 
-    # now we will check that the entered country name is
-    # valid or invalid using the unique code
-    codes = [
-        countries.get(country.title(), "Unknown code") for country in input_countries
-    ]
+    category_choice = input("Enter the category number: ")
 
-    # now we have to display all the categories from which user will
-    # decide and enter the name of that category
-    option = input(
-        "Which category are you interested in?\n1.Business\n2.Entertainment\n3.General\n4.Health\n5.Science\n6.Technology\n\nEnter here: "
-    )
+    if category_choice not in ["1", "2", "3", "4", "5", "6"]:
+        print("Invalid category choice. Please try again.")
+        continue
 
-    # now we will fetch the new according to the choice of the user
+    # Fetch top headlines based on the user's choice
+    category_mapping = {
+        "1": "business",
+        "2": "entertainment",
+        "3": "general",
+        "4": "health",
+        "5": "science",
+        "6": "technology"
+    }
+    category = category_mapping[category_choice]
+
     top_headlines = newsapi.get_top_headlines(
-        # getting top headlines from all the news channels
-        category=f"{option.lower()}",
+        category=category,
         language="en",
-        country=f"{codes[0].lower()}",
+        country=country_code.lower(),
     )
 
-    # fetch the top news under that category
+    # Display the articles
     Headlines = top_headlines["articles"]
+    display_articles(Headlines)
 
-    # now we will display the that news with a good readability for user
-    if Headlines:
-        for articles in Headlines:
-            b = articles["title"][::-1].index("-")
-            if "news" in (articles["title"][-b + 1 :]).lower():
-                print(f"{articles['title'][-b+1:]}: {articles['title'][:-b-2]}.")
-            else:
-                print(f"{articles['title'][-b+1:]} News: {articles['title'][:-b-2]}.")
-    else:
-        print(f"Sorry no articles found for {input_country}, Something Wrong!!!")
-    option = input("Do you want to search again[Yes/No]?")
-    if option.lower() == "no":
+    # Prompt the user to search again or exit
+    option = input("Do you want to search again? (Yes/No): ")
+    if option.lower() != "yes":
         want_to_search_again = False
