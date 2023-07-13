@@ -1,7 +1,7 @@
 from textblob import TextBlob
 
-file1 = open("1.txt", "r+")
-a = file.read()
+file1 = open("1.txt", "w+")
+a = file1.read()
 print("original text : " + str(a))
 b = TextBlob(a)
 
