@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Currency Converter Chatbot</title>
+</head>
+<body>
+    <h1>Currency Converter Chatbot</h1>
+    <form method="post" action="/">
+        <label for="amount">Amount:</label>
+        <input type="number" step="0.01" name="amount" required><br><br>
+        <label for="source_currency">Source Currency:</label>
+        <input type="text" name="source_currency" required><br><br>
+        <label for="target_currency">Target Currency:</label>
+        <input type="text" name="target_currency" required><br><br>
+        <input type="submit" value="Convert">
+    </form>
+    {% if result %}
+        <h3>Result:</h3>
+        <p>{{ result }}</p>
+    {% endif %}
+</body>
+</html>
