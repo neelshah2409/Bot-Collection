@@ -15,9 +15,8 @@ bot = telegram.Bot(token=TOKEN)
 # Function to handle the '/start' command
 def start(update, context):
     context.bot.send_message(
-        chat_id=update.effective_chat.id, text="Welcome to the Torrent Downloader Bot!"
+        chat_id=update.effective_chat.id, text="Welcome to the Torrent Downloader Bot!\n\nAvailable Commands:\n/download <torrent_link> - Download a torrent\n/list - List downloaded torrents\n/pause - Pause ongoing download\n/resume - Resume paused download\n/delete <torrent_number> - Delete a downloaded torrent"
     )
-
 
 # Function to handle torrent download command
 def download_torrent(update, context):
@@ -56,6 +55,41 @@ def download_torrent(update, context):
     else:
         update.message.reply_text("Invalid torrent link.")
 
+# Function to list downloaded torrents
+def list_torrents(update, context):
+    files = os.listdir(DOWNLOAD_PATH)
+    if files:
+        file_list = "\n".join(files)
+        update.message.reply_text(f"Downloaded Torrents:\n{file_list}")
+    else:
+        update.message.reply_text("No torrents downloaded.")
+
+# Function to pause ongoing download
+def pause_download(update, context):
+    # Implement pausing logic using the handle of the active download
+    update.message.reply_text("Pausing the download...")
+
+# Function to resume paused download
+def resume_download(update, context):
+    # Implement resuming logic using the handle of the paused download
+    update.message.reply_text("Resuming the download...")
+
+# Function to delete a downloaded torrent
+def delete_torrent(update, context):
+    # Get the user's message
+    message = update.message.text
+
+    # Extract the torrent number
+    torrent_number = int(message.split(" ")[1]) - 1
+
+    files = os.listdir(DOWNLOAD_PATH)
+    if torrent_number < 0 or torrent_number >= len(files):
+        update.message.reply_text("Invalid torrent number.")
+    else:
+        file_to_delete = files[torrent_number]
+        file_path = os.path.join(DOWNLOAD_PATH, file_to_delete)
+        os.remove(file_path)
+        update.message.reply_text(f"Torrent '{file_to_delete}' deleted successfully.")
 
 # Function to handle any other messages
 def echo(update, context):
@@ -63,26 +97,5 @@ def echo(update, context):
         chat_id=update.effective_chat.id, text="Sorry, I don't understand that command."
     )
 
-
 # Main function to run the Telegram bot
-def main():
-    # Create an instance of the Updater class
-    updater = Updater(TOKEN, use_context=True)
-
-    # Get the dispatcher to register handlers
-    dispatcher = updater.dispatcher
-
-    # Register the handlers
-    dispatcher.add_handler(CommandHandler("start", start))
-    dispatcher.add_handler(CommandHandler("download", download_torrent))
-    dispatcher.add_handler(MessageHandler(Filters.text & (~Filters.command), echo))
-
-    # Start the bot
-    updater.start_polling()
-
-    # Run the bot until Ctrl+C is pressed
-    updater.idle()
-
-
-if __name__ == "__main__":
-    main()
+def main

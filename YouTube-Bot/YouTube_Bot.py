@@ -62,7 +62,7 @@ def download_video(video_id):
             ydl.download([f'https://www.youtube.com/watch?v={video_id}'])
 
     except:
-        print("Video Not Downloaded\n do you Want to Play Video?(y/n)")
+        print("Video Not Downloaded\nDo you Want to Play Video? (y/n)")
         play_choice = input()
         if play_choice == "y":
             play_video(video_id)
@@ -70,7 +70,7 @@ def download_video(video_id):
 
 def play_video(video_id):
     try:
-    # Use pafy to get the video URL
+        # Use pafy to get the video URL
         url = f'https://www.youtube.com/watch?v={video_id}'
         video = pafy.new(url)
         best = video.getbest()
@@ -79,12 +79,15 @@ def play_video(video_id):
         input("Press any key to stop playback...")
         media.stop()
     except:
-        open_in_browser = input("Player Doesn't work Do You Want to Open In WebBrowser (y/n): ")
-        if open_in_browser == "y":
-            print(f"Playing This Video in Browser {url}")
+        open_in_browser = input("Player Doesn't work. Do You Want to Open In Web Browser? (y/n): ")
+        if open_in_browser.lower() == "y":
+            print(f"Playing This Video in Browser: {url}")
             webbrowser.open(url)
 
 
+# Create a directory for downloads if it doesn't exist
+download_dir = "downloads"
+os.makedirs(download_dir, exist_ok=True)
 
 # Main program loop
 while True:
@@ -99,23 +102,4 @@ while True:
         print(f"{index}. {video['title']} - {video['description']}")
         print()
 
-    video_number = input("Enter the number of the video you want to watch (0 to cancel): ")
-    if video_number == "0":
-        continue
-
-    selected_video = videos[int(video_number) - 1]
-    video_id = selected_video['video_id']
-    likes, tags, channel = show_video_details(video_id)
-
-    print(f"Channel name: {channel}")
-    print(f"Likes: {likes}")
-    print(f"Tags: {', '.join(tags)}")
-
-    download_choice = input("Do you want to Download This video? (y/n): ")
-    if download_choice.lower() == "y":
-        download_video(video_id)
-    else:
-        print("Do You Want to Play This Video? (y/n): ")
-        play_choice = input()
-        if play_choice.lower() == "y":
-            play_video(video_id)
+    video_number = input("Enter the number of the video you want to watch (
